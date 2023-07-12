@@ -1,5 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 @import "custom";
+
+.content{
+  background-color: white;
+  border: 4px solid rgb(240, 240, 240);
+}
+.link{
+  text-decoration: none;
+  color: #4181BF;
+}
 /* .App {
   text-align: center;
 }

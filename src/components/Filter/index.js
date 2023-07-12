@@ -17,7 +17,7 @@ const Filter = (props) => {
             <Form.Group className="col-2 checkbox" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Full Time Only" style={{fontWeight:600}} />
             </Form.Group>
-            <Button variant="primary" type="submit" className="col-2 btn-search">
+            <Button variant="outline-primary" type="submit" className="col-2 btn-search">
                 Search
             </Button>
       </Form>

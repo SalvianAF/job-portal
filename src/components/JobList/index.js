@@ -31,9 +31,8 @@ const JobList = () => {
     },[])
 
     return(
-        <div className="mx-4 my-3 px-4 pt-3 job-list">
-            {/* {console.log(page)} */}
-            <h4 className="list-title">Job List</h4>
+        <div className="mx-4 my-3 px-4 pt-3 content">
+            <h3 className="list-title">Job List</h3>
             <div className="table">
                 <InfiniteScroll dataLength={jobList.length} next={fetchJobsData} hasMore={hasMore}  
                 loader={<div className="d-flex justify-content-center"><Spinner animation="border"/></div>} 
@@ -43,8 +42,14 @@ const JobList = () => {
                         job !== null ?
                             <div className="row d-flex justify-content-between">
                                 <div className="col-6 row">
-                                    <div><h5>{job.title}</h5></div> 
-                                    <div className="d-flex">{job.company} - &nbsp;<p>{job.type}</p></div>
+                                    <a href={"/"+job.id} className="link"><h5>{job.title}</h5></a> 
+                                    <div className="d-flex">{job.company}
+                                        {job.type === "Full Time"?
+                                            <>- &nbsp; <p className="success-bold">{job.type}</p></>    
+                                        : <></>
+                                        }
+                                        
+                                     </div>
                                 </div>
                                 <div className="col-6 d-flex align-items-end flex-column">
                                     <div className="">{job.location}</div>

@@ -1,7 +1,11 @@
-.title{
-    font-size: larger;
+.navbar{
+    background-color: #4181BF;
 }
-.title-bold{
-    font-size: larger;
+.title{
+    font-size:28px;
+    color: white;
+}
+.bold{
     font-weight: 700;
+    color: white;
 }
