@@ -1,7 +1,7 @@
 import logo from './logo.svg';
-import './App.scss';
-import { lazy } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import './App.scss'
+import React, { lazy } from 'react';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 
 const Home = lazy(() => import("./pages/Home"));

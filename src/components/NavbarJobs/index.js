@@ -4,7 +4,7 @@ import "./index.css";
 
 const NavbarJobs = (props) => {
     return(
-        <Navbar bg="primary">
+        <Navbar variant="primary" bg="primary">
             <Navbar.Brand href="#home">
                 <div className="row mx-1">
                     <h4 className="title-bold col-7 pt-1 m-0">GitHub</h4> 
