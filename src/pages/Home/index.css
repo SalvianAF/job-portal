@@ -7,4 +7,12 @@
     color: #31a20e;
     font-weight: 600;
 }
+.checkbox{
+    padding-top: 35px;
+}
+.btn-search{
+    width: 100px;
+    height: 40px;
+    margin-top: 30px;
+}
 
