@@ -5,3 +5,9 @@
     background-color: white;
     border-bottom: 3px solid rgb(226, 226, 226);
 }
+.image{
+    width: 100%;
+}
+.warning{
+    background-color: rgb(255, 255, 228);
+}

@@ -7,22 +7,21 @@ import './index.css'
 
 const Detail = (props) => {
     const [detail, setDetail] = useState({})
-    let { id } = useParams();
+    let { id } = useParams(); //get id form path
 
-    const fetchDetailJobs = async() => {
+    const fetchDetailJobs = async() => { //get detail data job
         await axios.get(`http://dev3.dansmultipro.co.id/api/recruitment/positions/${id}`)
         .then((response) => {;
             setDetail(response.data)
-            console.log(response.data)
         }).catch(err => {
             console.error(err);
         });
     }
 
     useEffect(() => {
-        console.log(id)
         fetchDetailJobs()
     },[])
+
     return(
         <div>
             <NavbarJobs/>
@@ -40,7 +39,7 @@ const Detail = (props) => {
                         </div>
                         <div className="col-5">
                             <Card header={detail.company} isImg={true} body={[detail.company_logo, detail.company_url]}/>
-                            <Card header={"How to Apply"} isImg={false} body={[detail.how_to_apply]}/>
+                            <Card header={"How to Apply"} isImg={false} body={[detail.how_to_apply]} style={"warning"}/>
                         </div>
 
                     </div>

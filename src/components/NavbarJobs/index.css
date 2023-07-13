@@ -9,3 +9,19 @@
     font-weight: 700;
     color: white;
 }
+.profile-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+.login{
+    background-color: white;
+    border: 1px solid white;
+}
+.login:hover{
+    background-color: rgb(214, 214, 214);
+    border-color: black;
+}
+.dropdown-toggle::before {
+    content: none !important; 
+  }

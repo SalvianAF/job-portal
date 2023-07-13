@@ -7,10 +7,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Spinner from 'react-bootstrap/Spinner';
 import { Button, Form } from "react-bootstrap";
 
-const Home = (props) => {
 
-    // const jobList = useSelector((state) => state.jobList.list)
-    // const filter = useSelector((state) => state.filter.attributes)
+const Home = (props) => {
     const [jobList, setJobList] = useState([])
     const [description, setDescription] = useState("")
     const [location, setLocation] = useState("")
@@ -18,17 +16,13 @@ const Home = (props) => {
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
 
-    const fetchJobsData = async () => {
+    const fetchJobsData = async () => { //get job list
         await axios.get(`http://dev3.dansmultipro.co.id/api/recruitment/positions.json?description=${description}&location=${location}&full_time=${isFullTime}&page=${page}`)
         .then((response) => {
             setJobList(prevJobList => [...prevJobList, ...response.data])
-            // dispatch(updateJobList(response.data))
             setPage(page+1);
-            console.log(response.data)
-            console.log(page)
             if (response.data[response.data.length - 1] == null || response.data.length < 10){
                 setHasMore(false)
-                // console.log(response.data[response.data.length - 1])
             }
         }).catch(err => {
             setHasMore(false)
@@ -36,12 +30,12 @@ const Home = (props) => {
         });
     }
 
-    const filterJobs = () =>{
+    const filterJobs = () =>{ //reset
         setPage(1);
         setJobList([])
     }
 
-    useEffect(() => {
+    useEffect(() => {  //get data when page is changing
         fetchJobsData()
     },[page])
     
@@ -51,14 +45,12 @@ const Home = (props) => {
             <NavbarJobs/>
 
             {/* Filter */}
-            {console.log(page)}
             <Form className="row mx-2 mt-4">
                 <Form.Group className="col-4">
                     <Form.Label><h6 className="m-0">Job Description</h6></Form.Label>
                     <Form.Control type="text" placeholder="Filter by title, benefits, companies, expertise" value={description} 
                     onChange={(e) => {setDescription(e.target.value)}}/>
                 </Form.Group>
-        
                 <Form.Group className="col-4">
                     <Form.Label><h6 className="m-0">Location</h6></Form.Label>
                     <Form.Control type="text" placeholder="Filter by city, state, zip code, or country" value={location} 
