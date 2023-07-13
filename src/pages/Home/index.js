@@ -6,6 +6,7 @@ import moment from "moment/moment";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Spinner from 'react-bootstrap/Spinner';
 import { Button, Form } from "react-bootstrap";
+import  { Link, NavLink } from 'react-router-dom'
 
 
 const Home = (props) => {
